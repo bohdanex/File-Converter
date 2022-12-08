@@ -6,18 +6,16 @@ namespace File_Converter.Converter_Factory.Concrete_Factory
 {
     public class TextConverterFactory : ConverterFactory
     {
-        public override Label RenderTitle()
+        public override Label RenderTitle(ILabelBuilder labelBuilder)
         {
-            LabelBuilder labelBuilder = new LabelBuilder();
             return (labelBuilder.SetName("labelInfo")
                 .SetFontSize(12).SetText("Please select the word document from your" +
                 " \nlocal machine or enter file path")
                 .SetPosition(12, 62).AutoScale(true)
                 .GetComponent());
         }
-        public override TextBox RenderTextBox()
+        public override TextBox RenderTextBox(ITextBoxBuilder textBoxBuilder)
         {
-            TextBoxBuilder textBoxBuilder = new TextBoxBuilder();
             return textBoxBuilder.SetName("textBoxPath")
                 .SetPosition(12, 171).SetSize(389, 27).GetComponent();
         }

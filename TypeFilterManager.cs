@@ -8,7 +8,7 @@ namespace File_Converter
     //The main task of this class - make filtering options and return us a string
     //Filter option example without method: "Video files(*.mp4; *.mkv)|*.mp4;*.mkv"
     //With using this class method: Filter("Video files", _formatList(automatically sets by Singleton class))
-    public class TypeFilterManager
+    public static class TypeFilterManager
     {
         public static string Filter(string text, List<string> typeList)
         {

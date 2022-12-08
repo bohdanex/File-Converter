@@ -3,6 +3,7 @@ using MediaToolkit.Model;
 using SautinSoft.Document;
 using System;
 using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace File_Converter

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using File_Converter.Builders;
+using File_Converter.Builders.Concrete_Builders;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace File_Converter.Converter_Factory
@@ -13,13 +15,13 @@ namespace File_Converter.Converter_Factory
         {
             AllControls = new List<Control>
             {
-                RenderTitle(),
-                RenderTextBox(),
+                RenderTitle(new LabelBuilder()),
+                RenderTextBox(new TextBoxBuilder()),
             };
             GlobalVariables.ActiveForm.Controls.AddRange(AllControls.ToArray());
         }
-        public abstract Label RenderTitle();
-        public abstract TextBox RenderTextBox();
+        public abstract Label RenderTitle(ILabelBuilder labelBuilder);
+        public abstract TextBox RenderTextBox(ITextBoxBuilder textBoxBuilder);
         //Sets up the ComboBox contoller items and rules
         public static void SetDropBoxItems(ref ComboBox comboBox, List<string> typeList)
         {
